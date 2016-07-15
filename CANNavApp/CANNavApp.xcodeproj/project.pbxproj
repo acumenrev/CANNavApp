@@ -1,0 +1,819 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00BB11D9A7C9D0395F001859 /* Pods_CANNavApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4909A7AB15149D8C1771198E /* Pods_CANNavApp.framework */; };
+		48CA0777A0550D4534139BDC /* Pods_CANNavAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954F731A9517DD2E4741832A /* Pods_CANNavAppTests.framework */; };
+		961732F91D38D42E003645F1 /* TRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961732F81D38D42E003645F1 /* TRangeExtension.swift */; };
+		961732FD1D38D79C003645F1 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961732FB1D38D79C003645F1 /* SearchTableViewCell.swift */; };
+		961732FE1D38D79C003645F1 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961732FC1D38D79C003645F1 /* SearchTableViewCell.xib */; };
+		961733001D38E1BC003645F1 /* MyLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961732FF1D38E1BC003645F1 /* MyLocation.swift */; };
+		961733011D38E1BC003645F1 /* MyLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961732FF1D38E1BC003645F1 /* MyLocation.swift */; };
+		9642E1EF1D38831C002E1D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E1EE1D38831C002E1D91 /* AppDelegate.swift */; };
+		9642E1F11D38831C002E1D91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E1F01D38831C002E1D91 /* ViewController.swift */; };
+		9642E1F41D38831C002E1D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1F21D38831C002E1D91 /* Main.storyboard */; };
+		9642E1F61D38831C002E1D91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1F51D38831C002E1D91 /* Assets.xcassets */; };
+		9642E1F91D38831C002E1D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1F71D38831C002E1D91 /* LaunchScreen.storyboard */; };
+		9642E2041D38831C002E1D91 /* CANNavAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2031D38831C002E1D91 /* CANNavAppTests.swift */; };
+		9642E2171D388774002E1D91 /* TColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2101D388774002E1D91 /* TColorExtension.swift */; };
+		9642E2181D388774002E1D91 /* TColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2101D388774002E1D91 /* TColorExtension.swift */; };
+		9642E2191D388774002E1D91 /* TImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2111D388774002E1D91 /* TImageExtension.swift */; };
+		9642E21A1D388774002E1D91 /* TImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2111D388774002E1D91 /* TImageExtension.swift */; };
+		9642E21B1D388774002E1D91 /* TStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2121D388774002E1D91 /* TStringExtension.swift */; };
+		9642E21C1D388774002E1D91 /* TStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2121D388774002E1D91 /* TStringExtension.swift */; };
+		9642E21D1D388774002E1D91 /* TTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2131D388774002E1D91 /* TTableViewExtension.swift */; };
+		9642E21E1D388774002E1D91 /* TTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2131D388774002E1D91 /* TTableViewExtension.swift */; };
+		9642E2211D388774002E1D91 /* TUIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2151D388774002E1D91 /* TUIViewControllerExtension.swift */; };
+		9642E2221D388774002E1D91 /* TUIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2151D388774002E1D91 /* TUIViewControllerExtension.swift */; };
+		9642E2231D388774002E1D91 /* TViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2161D388774002E1D91 /* TViewExtension.swift */; };
+		9642E2241D388774002E1D91 /* TViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2161D388774002E1D91 /* TViewExtension.swift */; };
+		9642E2271D388780002E1D91 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2261D388780002E1D91 /* NetworkManager.swift */; };
+		9642E2281D388780002E1D91 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2261D388780002E1D91 /* NetworkManager.swift */; };
+		9642E22D1D3887B2002E1D91 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E22B1D3887B2002E1D91 /* MainViewController.swift */; };
+		9642E2331D3887BF002E1D91 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2311D3887BF002E1D91 /* SearchViewController.swift */; };
+		9642E2351D3887BF002E1D91 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9642E2321D3887BF002E1D91 /* SearchViewController.xib */; };
+		9642E2361D3887BF002E1D91 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9642E2321D3887BF002E1D91 /* SearchViewController.xib */; };
+		9642E2391D3888E3002E1D91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2371D3888E3002E1D91 /* Constants.swift */; };
+		9642E23A1D3888E3002E1D91 /* TUtilsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642E2381D3888E3002E1D91 /* TUtilsSwift.swift */; };
+		966A3A081D389196006E3E3C /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F51D389196006E3E3C /* icon_back.png */; };
+		966A3A091D389196006E3E3C /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F51D389196006E3E3C /* icon_back.png */; };
+		966A3A0A1D389196006E3E3C /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F61D389196006E3E3C /* icon_back@2x.png */; };
+		966A3A0B1D389196006E3E3C /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F61D389196006E3E3C /* icon_back@2x.png */; };
+		966A3A0C1D389196006E3E3C /* icon_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F71D389196006E3E3C /* icon_map.png */; };
+		966A3A0D1D389196006E3E3C /* icon_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F71D389196006E3E3C /* icon_map.png */; };
+		966A3A0E1D389196006E3E3C /* icon_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F81D389196006E3E3C /* icon_map@2x.png */; };
+		966A3A0F1D389196006E3E3C /* icon_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F81D389196006E3E3C /* icon_map@2x.png */; };
+		966A3A101D389196006E3E3C /* icon_map_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F91D389196006E3E3C /* icon_map_filled.png */; };
+		966A3A111D389196006E3E3C /* icon_map_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39F91D389196006E3E3C /* icon_map_filled.png */; };
+		966A3A121D389196006E3E3C /* icon_map_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FA1D389196006E3E3C /* icon_map_filled@2x.png */; };
+		966A3A131D389196006E3E3C /* icon_map_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FA1D389196006E3E3C /* icon_map_filled@2x.png */; };
+		966A3A141D389196006E3E3C /* icon_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FB1D389196006E3E3C /* icon_marker.png */; };
+		966A3A151D389196006E3E3C /* icon_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FB1D389196006E3E3C /* icon_marker.png */; };
+		966A3A161D389196006E3E3C /* icon_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FC1D389196006E3E3C /* icon_marker@2x.png */; };
+		966A3A171D389196006E3E3C /* icon_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FC1D389196006E3E3C /* icon_marker@2x.png */; };
+		966A3A181D389196006E3E3C /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FD1D389196006E3E3C /* icon_menu.png */; };
+		966A3A191D389196006E3E3C /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FD1D389196006E3E3C /* icon_menu.png */; };
+		966A3A1A1D389196006E3E3C /* icon_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FE1D389196006E3E3C /* icon_menu@2x.png */; };
+		966A3A1B1D389196006E3E3C /* icon_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FE1D389196006E3E3C /* icon_menu@2x.png */; };
+		966A3A1C1D389196006E3E3C /* icon_search_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FF1D389196006E3E3C /* icon_search_marker.png */; };
+		966A3A1D1D389196006E3E3C /* icon_search_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A39FF1D389196006E3E3C /* icon_search_marker.png */; };
+		966A3A1E1D389196006E3E3C /* icon_search_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A001D389196006E3E3C /* icon_search_marker@2x.png */; };
+		966A3A1F1D389196006E3E3C /* icon_search_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A001D389196006E3E3C /* icon_search_marker@2x.png */; };
+		966A3A201D389196006E3E3C /* icon_topic.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A011D389196006E3E3C /* icon_topic.png */; };
+		966A3A211D389196006E3E3C /* icon_topic.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A011D389196006E3E3C /* icon_topic.png */; };
+		966A3A221D389196006E3E3C /* icon_topic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A021D389196006E3E3C /* icon_topic@2x.png */; };
+		966A3A231D389196006E3E3C /* icon_topic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A021D389196006E3E3C /* icon_topic@2x.png */; };
+		966A3A241D389196006E3E3C /* icon_topic_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A031D389196006E3E3C /* icon_topic_filled.png */; };
+		966A3A251D389196006E3E3C /* icon_topic_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A031D389196006E3E3C /* icon_topic_filled.png */; };
+		966A3A261D389196006E3E3C /* icon_topic_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A041D389196006E3E3C /* icon_topic_filled@2x.png */; };
+		966A3A271D389196006E3E3C /* icon_topic_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A041D389196006E3E3C /* icon_topic_filled@2x.png */; };
+		966A3A281D389196006E3E3C /* img_default_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A051D389196006E3E3C /* img_default_marker.png */; };
+		966A3A291D389196006E3E3C /* img_default_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A051D389196006E3E3C /* img_default_marker.png */; };
+		966A3A2A1D389196006E3E3C /* img_default_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A061D389196006E3E3C /* img_default_marker@2x.png */; };
+		966A3A2B1D389196006E3E3C /* img_default_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A061D389196006E3E3C /* img_default_marker@2x.png */; };
+		966A3A2C1D389196006E3E3C /* img_icon_current_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A071D389196006E3E3C /* img_icon_current_location.png */; };
+		966A3A2D1D389196006E3E3C /* img_icon_current_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A071D389196006E3E3C /* img_icon_current_location.png */; };
+		966A3A2F1D3891D2006E3E3C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A2E1D3891D2006E3E3C /* MainViewController.xib */; };
+		966A3A301D3891D2006E3E3C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966A3A2E1D3891D2006E3E3C /* MainViewController.xib */; };
+		966A3A331D3892C4006E3E3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966A3A321D3892C4006E3E3C /* CoreLocation.framework */; };
+		966A3A351D3892D1006E3E3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966A3A341D3892D1006E3E3C /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9642E2001D38831C002E1D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9642E1E31D38831C002E1D91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9642E1EA1D38831C002E1D91;
+			remoteInfo = CANNavApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		38CEE689CA09EED8EA095E71 /* Pods-CANNavApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANNavApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CANNavApp/Pods-CANNavApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4909A7AB15149D8C1771198E /* Pods_CANNavApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CANNavApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6542B1D1BBF9B43C6F9314DC /* Pods-CANNavAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANNavAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CANNavAppTests/Pods-CANNavAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		954F731A9517DD2E4741832A /* Pods_CANNavAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CANNavAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		961732F81D38D42E003645F1 /* TRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRangeExtension.swift; sourceTree = "<group>"; };
+		961732FB1D38D79C003645F1 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Classes/Views/SearchTableViewCell.swift; sourceTree = "<group>"; };
+		961732FC1D38D79C003645F1 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchTableViewCell.xib; path = Classes/Views/SearchTableViewCell.xib; sourceTree = "<group>"; };
+		961732FF1D38E1BC003645F1 /* MyLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyLocation.swift; path = Classes/Models/MyLocation.swift; sourceTree = "<group>"; };
+		9642E1EB1D38831C002E1D91 /* CANNavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CANNavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9642E1EE1D38831C002E1D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9642E1F01D38831C002E1D91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9642E1F31D38831C002E1D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9642E1F51D38831C002E1D91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9642E1F81D38831C002E1D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9642E1FA1D38831C002E1D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9642E1FF1D38831C002E1D91 /* CANNavAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CANNavAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9642E2031D38831C002E1D91 /* CANNavAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CANNavAppTests.swift; sourceTree = "<group>"; };
+		9642E2051D38831C002E1D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9642E2101D388774002E1D91 /* TColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TColorExtension.swift; sourceTree = "<group>"; };
+		9642E2111D388774002E1D91 /* TImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TImageExtension.swift; sourceTree = "<group>"; };
+		9642E2121D388774002E1D91 /* TStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TStringExtension.swift; sourceTree = "<group>"; };
+		9642E2131D388774002E1D91 /* TTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTableViewExtension.swift; sourceTree = "<group>"; };
+		9642E2151D388774002E1D91 /* TUIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TUIViewControllerExtension.swift; sourceTree = "<group>"; };
+		9642E2161D388774002E1D91 /* TViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TViewExtension.swift; sourceTree = "<group>"; };
+		9642E2261D388780002E1D91 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9642E22B1D3887B2002E1D91 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9642E2311D3887BF002E1D91 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9642E2321D3887BF002E1D91 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		9642E2371D3888E3002E1D91 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Classes/Constants.swift; sourceTree = "<group>"; };
+		9642E2381D3888E3002E1D91 /* TUtilsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUtilsSwift.swift; path = Classes/TUtilsSwift.swift; sourceTree = "<group>"; };
+		966A39F51D389196006E3E3C /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
+		966A39F61D389196006E3E3C /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
+		966A39F71D389196006E3E3C /* icon_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_map.png; sourceTree = "<group>"; };
+		966A39F81D389196006E3E3C /* icon_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_map@2x.png"; sourceTree = "<group>"; };
+		966A39F91D389196006E3E3C /* icon_map_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_map_filled.png; sourceTree = "<group>"; };
+		966A39FA1D389196006E3E3C /* icon_map_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_map_filled@2x.png"; sourceTree = "<group>"; };
+		966A39FB1D389196006E3E3C /* icon_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_marker.png; sourceTree = "<group>"; };
+		966A39FC1D389196006E3E3C /* icon_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_marker@2x.png"; sourceTree = "<group>"; };
+		966A39FD1D389196006E3E3C /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
+		966A39FE1D389196006E3E3C /* icon_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu@2x.png"; sourceTree = "<group>"; };
+		966A39FF1D389196006E3E3C /* icon_search_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_search_marker.png; sourceTree = "<group>"; };
+		966A3A001D389196006E3E3C /* icon_search_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search_marker@2x.png"; sourceTree = "<group>"; };
+		966A3A011D389196006E3E3C /* icon_topic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_topic.png; sourceTree = "<group>"; };
+		966A3A021D389196006E3E3C /* icon_topic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_topic@2x.png"; sourceTree = "<group>"; };
+		966A3A031D389196006E3E3C /* icon_topic_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_topic_filled.png; sourceTree = "<group>"; };
+		966A3A041D389196006E3E3C /* icon_topic_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_topic_filled@2x.png"; sourceTree = "<group>"; };
+		966A3A051D389196006E3E3C /* img_default_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_default_marker.png; sourceTree = "<group>"; };
+		966A3A061D389196006E3E3C /* img_default_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_default_marker@2x.png"; sourceTree = "<group>"; };
+		966A3A071D389196006E3E3C /* img_icon_current_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_icon_current_location.png; sourceTree = "<group>"; };
+		966A3A2E1D3891D2006E3E3C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		966A3A321D3892C4006E3E3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		966A3A341D3892D1006E3E3C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		966A3A361D3896B2006E3E3C /* CANNavApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CANNavApp-Bridging-Header.h"; path = "Classes/CANNavApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		9AC0935D1DF6D29079E90521 /* Pods-CANNavAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANNavAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CANNavAppTests/Pods-CANNavAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		E8830A72AABDE20998FC63A4 /* Pods-CANNavApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANNavApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CANNavApp/Pods-CANNavApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9642E1E81D38831C002E1D91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966A3A351D3892D1006E3E3C /* QuartzCore.framework in Frameworks */,
+				966A3A331D3892C4006E3E3C /* CoreLocation.framework in Frameworks */,
+				00BB11D9A7C9D0395F001859 /* Pods_CANNavApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9642E1FC1D38831C002E1D91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48CA0777A0550D4534139BDC /* Pods_CANNavAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		961732FA1D38D786003645F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				961732FB1D38D79C003645F1 /* SearchTableViewCell.swift */,
+				961732FC1D38D79C003645F1 /* SearchTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9642E1E21D38831C002E1D91 = {
+			isa = PBXGroup;
+			children = (
+				9642E1ED1D38831C002E1D91 /* CANNavApp */,
+				9642E2021D38831C002E1D91 /* CANNavAppTests */,
+				9642E1EC1D38831C002E1D91 /* Products */,
+				E029E3476CA5A6DFAA9DB475 /* Pods */,
+				AC7DA2792B44B0AC5E27068F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9642E1EC1D38831C002E1D91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9642E1EB1D38831C002E1D91 /* CANNavApp.app */,
+				9642E1FF1D38831C002E1D91 /* CANNavAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9642E1ED1D38831C002E1D91 /* CANNavApp */ = {
+			isa = PBXGroup;
+			children = (
+				966A39F41D389196006E3E3C /* Images */,
+				9642E20E1D38873F002E1D91 /* Classes */,
+				9642E1EE1D38831C002E1D91 /* AppDelegate.swift */,
+				9642E1F01D38831C002E1D91 /* ViewController.swift */,
+				9642E1F21D38831C002E1D91 /* Main.storyboard */,
+				9642E1F51D38831C002E1D91 /* Assets.xcassets */,
+				9642E1F71D38831C002E1D91 /* LaunchScreen.storyboard */,
+				9642E1FA1D38831C002E1D91 /* Info.plist */,
+			);
+			path = CANNavApp;
+			sourceTree = "<group>";
+		};
+		9642E2021D38831C002E1D91 /* CANNavAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9642E2031D38831C002E1D91 /* CANNavAppTests.swift */,
+				9642E2051D38831C002E1D91 /* Info.plist */,
+			);
+			path = CANNavAppTests;
+			sourceTree = "<group>";
+		};
+		9642E20E1D38873F002E1D91 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				961732FA1D38D786003645F1 /* Views */,
+				966A39F31D388FBC006E3E3C /* Models */,
+				9642E2371D3888E3002E1D91 /* Constants.swift */,
+				9642E2381D3888E3002E1D91 /* TUtilsSwift.swift */,
+				9642E22A1D388798002E1D91 /* ViewControllers */,
+				9642E2251D388780002E1D91 /* Managers */,
+				9642E20F1D388774002E1D91 /* Extensions */,
+				966A3A361D3896B2006E3E3C /* CANNavApp-Bridging-Header.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		9642E20F1D388774002E1D91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9642E2101D388774002E1D91 /* TColorExtension.swift */,
+				9642E2111D388774002E1D91 /* TImageExtension.swift */,
+				9642E2121D388774002E1D91 /* TStringExtension.swift */,
+				9642E2131D388774002E1D91 /* TTableViewExtension.swift */,
+				9642E2151D388774002E1D91 /* TUIViewControllerExtension.swift */,
+				9642E2161D388774002E1D91 /* TViewExtension.swift */,
+				961732F81D38D42E003645F1 /* TRangeExtension.swift */,
+			);
+			name = Extensions;
+			path = Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		9642E2251D388780002E1D91 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9642E2261D388780002E1D91 /* NetworkManager.swift */,
+			);
+			name = Managers;
+			path = Classes/Managers;
+			sourceTree = "<group>";
+		};
+		9642E22A1D388798002E1D91 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9642E22B1D3887B2002E1D91 /* MainViewController.swift */,
+				966A3A2E1D3891D2006E3E3C /* MainViewController.xib */,
+				9642E2311D3887BF002E1D91 /* SearchViewController.swift */,
+				9642E2321D3887BF002E1D91 /* SearchViewController.xib */,
+			);
+			name = ViewControllers;
+			path = Classes/ViewControllers;
+			sourceTree = "<group>";
+		};
+		966A39F31D388FBC006E3E3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				961732FF1D38E1BC003645F1 /* MyLocation.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		966A39F41D389196006E3E3C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				966A39F51D389196006E3E3C /* icon_back.png */,
+				966A39F61D389196006E3E3C /* icon_back@2x.png */,
+				966A39F71D389196006E3E3C /* icon_map.png */,
+				966A39F81D389196006E3E3C /* icon_map@2x.png */,
+				966A39F91D389196006E3E3C /* icon_map_filled.png */,
+				966A39FA1D389196006E3E3C /* icon_map_filled@2x.png */,
+				966A39FB1D389196006E3E3C /* icon_marker.png */,
+				966A39FC1D389196006E3E3C /* icon_marker@2x.png */,
+				966A39FD1D389196006E3E3C /* icon_menu.png */,
+				966A39FE1D389196006E3E3C /* icon_menu@2x.png */,
+				966A39FF1D389196006E3E3C /* icon_search_marker.png */,
+				966A3A001D389196006E3E3C /* icon_search_marker@2x.png */,
+				966A3A011D389196006E3E3C /* icon_topic.png */,
+				966A3A021D389196006E3E3C /* icon_topic@2x.png */,
+				966A3A031D389196006E3E3C /* icon_topic_filled.png */,
+				966A3A041D389196006E3E3C /* icon_topic_filled@2x.png */,
+				966A3A051D389196006E3E3C /* img_default_marker.png */,
+				966A3A061D389196006E3E3C /* img_default_marker@2x.png */,
+				966A3A071D389196006E3E3C /* img_icon_current_location.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = SOURCE_ROOT;
+		};
+		AC7DA2792B44B0AC5E27068F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				966A3A341D3892D1006E3E3C /* QuartzCore.framework */,
+				966A3A321D3892C4006E3E3C /* CoreLocation.framework */,
+				4909A7AB15149D8C1771198E /* Pods_CANNavApp.framework */,
+				954F731A9517DD2E4741832A /* Pods_CANNavAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E029E3476CA5A6DFAA9DB475 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38CEE689CA09EED8EA095E71 /* Pods-CANNavApp.debug.xcconfig */,
+				E8830A72AABDE20998FC63A4 /* Pods-CANNavApp.release.xcconfig */,
+				6542B1D1BBF9B43C6F9314DC /* Pods-CANNavAppTests.debug.xcconfig */,
+				9AC0935D1DF6D29079E90521 /* Pods-CANNavAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9642E1EA1D38831C002E1D91 /* CANNavApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9642E2081D38831C002E1D91 /* Build configuration list for PBXNativeTarget "CANNavApp" */;
+			buildPhases = (
+				582967CFBEC70B9EB67A676D /* [CP] Check Pods Manifest.lock */,
+				9642E1E71D38831C002E1D91 /* Sources */,
+				9642E1E81D38831C002E1D91 /* Frameworks */,
+				9642E1E91D38831C002E1D91 /* Resources */,
+				5F29748796B730C804745D34 /* [CP] Embed Pods Frameworks */,
+				774A010FDD73B78ED52B5B8F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CANNavApp;
+			productName = CANNavApp;
+			productReference = 9642E1EB1D38831C002E1D91 /* CANNavApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9642E1FE1D38831C002E1D91 /* CANNavAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9642E20B1D38831C002E1D91 /* Build configuration list for PBXNativeTarget "CANNavAppTests" */;
+			buildPhases = (
+				C130C69BBFD36443D2139FBA /* [CP] Check Pods Manifest.lock */,
+				9642E1FB1D38831C002E1D91 /* Sources */,
+				9642E1FC1D38831C002E1D91 /* Frameworks */,
+				9642E1FD1D38831C002E1D91 /* Resources */,
+				6D86CB7E569EAB1B03E9B860 /* [CP] Embed Pods Frameworks */,
+				3DFBB4378263DB8395E2DB09 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9642E2011D38831C002E1D91 /* PBXTargetDependency */,
+			);
+			name = CANNavAppTests;
+			productName = CANNavAppTests;
+			productReference = 9642E1FF1D38831C002E1D91 /* CANNavAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9642E1E31D38831C002E1D91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = acumenvn;
+				TargetAttributes = {
+					9642E1EA1D38831C002E1D91 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = PP3D7A2MP5;
+					};
+					9642E1FE1D38831C002E1D91 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9642E1EA1D38831C002E1D91;
+					};
+				};
+			};
+			buildConfigurationList = 9642E1E61D38831C002E1D91 /* Build configuration list for PBXProject "CANNavApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9642E1E21D38831C002E1D91;
+			productRefGroup = 9642E1EC1D38831C002E1D91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9642E1EA1D38831C002E1D91 /* CANNavApp */,
+				9642E1FE1D38831C002E1D91 /* CANNavAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9642E1E91D38831C002E1D91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966A3A2A1D389196006E3E3C /* img_default_marker@2x.png in Resources */,
+				966A3A0A1D389196006E3E3C /* icon_back@2x.png in Resources */,
+				966A3A261D389196006E3E3C /* icon_topic_filled@2x.png in Resources */,
+				9642E1F91D38831C002E1D91 /* LaunchScreen.storyboard in Resources */,
+				966A3A201D389196006E3E3C /* icon_topic.png in Resources */,
+				9642E1F61D38831C002E1D91 /* Assets.xcassets in Resources */,
+				966A3A181D389196006E3E3C /* icon_menu.png in Resources */,
+				966A3A2C1D389196006E3E3C /* img_icon_current_location.png in Resources */,
+				9642E1F41D38831C002E1D91 /* Main.storyboard in Resources */,
+				966A3A241D389196006E3E3C /* icon_topic_filled.png in Resources */,
+				966A3A141D389196006E3E3C /* icon_marker.png in Resources */,
+				966A3A0E1D389196006E3E3C /* icon_map@2x.png in Resources */,
+				966A3A161D389196006E3E3C /* icon_marker@2x.png in Resources */,
+				966A3A1C1D389196006E3E3C /* icon_search_marker.png in Resources */,
+				966A3A101D389196006E3E3C /* icon_map_filled.png in Resources */,
+				966A3A081D389196006E3E3C /* icon_back.png in Resources */,
+				966A3A121D389196006E3E3C /* icon_map_filled@2x.png in Resources */,
+				966A3A0C1D389196006E3E3C /* icon_map.png in Resources */,
+				966A3A221D389196006E3E3C /* icon_topic@2x.png in Resources */,
+				961732FE1D38D79C003645F1 /* SearchTableViewCell.xib in Resources */,
+				966A3A2F1D3891D2006E3E3C /* MainViewController.xib in Resources */,
+				966A3A1E1D389196006E3E3C /* icon_search_marker@2x.png in Resources */,
+				9642E2351D3887BF002E1D91 /* SearchViewController.xib in Resources */,
+				966A3A1A1D389196006E3E3C /* icon_menu@2x.png in Resources */,
+				966A3A281D389196006E3E3C /* img_default_marker.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9642E1FD1D38831C002E1D91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966A3A131D389196006E3E3C /* icon_map_filled@2x.png in Resources */,
+				966A3A251D389196006E3E3C /* icon_topic_filled.png in Resources */,
+				966A3A091D389196006E3E3C /* icon_back.png in Resources */,
+				966A3A1D1D389196006E3E3C /* icon_search_marker.png in Resources */,
+				966A3A0D1D389196006E3E3C /* icon_map.png in Resources */,
+				9642E2361D3887BF002E1D91 /* SearchViewController.xib in Resources */,
+				966A3A231D389196006E3E3C /* icon_topic@2x.png in Resources */,
+				966A3A1F1D389196006E3E3C /* icon_search_marker@2x.png in Resources */,
+				966A3A2B1D389196006E3E3C /* img_default_marker@2x.png in Resources */,
+				966A3A151D389196006E3E3C /* icon_marker.png in Resources */,
+				966A3A171D389196006E3E3C /* icon_marker@2x.png in Resources */,
+				966A3A211D389196006E3E3C /* icon_topic.png in Resources */,
+				966A3A0B1D389196006E3E3C /* icon_back@2x.png in Resources */,
+				966A3A2D1D389196006E3E3C /* img_icon_current_location.png in Resources */,
+				966A3A0F1D389196006E3E3C /* icon_map@2x.png in Resources */,
+				966A3A271D389196006E3E3C /* icon_topic_filled@2x.png in Resources */,
+				966A3A111D389196006E3E3C /* icon_map_filled.png in Resources */,
+				966A3A291D389196006E3E3C /* img_default_marker.png in Resources */,
+				966A3A191D389196006E3E3C /* icon_menu.png in Resources */,
+				966A3A301D3891D2006E3E3C /* MainViewController.xib in Resources */,
+				966A3A1B1D389196006E3E3C /* icon_menu@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DFBB4378263DB8395E2DB09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANNavAppTests/Pods-CANNavAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		582967CFBEC70B9EB67A676D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F29748796B730C804745D34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANNavApp/Pods-CANNavApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D86CB7E569EAB1B03E9B860 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANNavAppTests/Pods-CANNavAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		774A010FDD73B78ED52B5B8F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANNavApp/Pods-CANNavApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C130C69BBFD36443D2139FBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9642E1E71D38831C002E1D91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9642E21B1D388774002E1D91 /* TStringExtension.swift in Sources */,
+				9642E22D1D3887B2002E1D91 /* MainViewController.swift in Sources */,
+				9642E2191D388774002E1D91 /* TImageExtension.swift in Sources */,
+				9642E23A1D3888E3002E1D91 /* TUtilsSwift.swift in Sources */,
+				9642E2271D388780002E1D91 /* NetworkManager.swift in Sources */,
+				9642E2211D388774002E1D91 /* TUIViewControllerExtension.swift in Sources */,
+				9642E2231D388774002E1D91 /* TViewExtension.swift in Sources */,
+				9642E2331D3887BF002E1D91 /* SearchViewController.swift in Sources */,
+				961732F91D38D42E003645F1 /* TRangeExtension.swift in Sources */,
+				961732FD1D38D79C003645F1 /* SearchTableViewCell.swift in Sources */,
+				961733001D38E1BC003645F1 /* MyLocation.swift in Sources */,
+				9642E21D1D388774002E1D91 /* TTableViewExtension.swift in Sources */,
+				9642E1F11D38831C002E1D91 /* ViewController.swift in Sources */,
+				9642E1EF1D38831C002E1D91 /* AppDelegate.swift in Sources */,
+				9642E2171D388774002E1D91 /* TColorExtension.swift in Sources */,
+				9642E2391D3888E3002E1D91 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9642E1FB1D38831C002E1D91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9642E2281D388780002E1D91 /* NetworkManager.swift in Sources */,
+				9642E2181D388774002E1D91 /* TColorExtension.swift in Sources */,
+				9642E21E1D388774002E1D91 /* TTableViewExtension.swift in Sources */,
+				9642E2241D388774002E1D91 /* TViewExtension.swift in Sources */,
+				9642E21C1D388774002E1D91 /* TStringExtension.swift in Sources */,
+				961733011D38E1BC003645F1 /* MyLocation.swift in Sources */,
+				9642E21A1D388774002E1D91 /* TImageExtension.swift in Sources */,
+				9642E2041D38831C002E1D91 /* CANNavAppTests.swift in Sources */,
+				9642E2221D388774002E1D91 /* TUIViewControllerExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9642E2011D38831C002E1D91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9642E1EA1D38831C002E1D91 /* CANNavApp */;
+			targetProxy = 9642E2001D38831C002E1D91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9642E1F21D38831C002E1D91 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9642E1F31D38831C002E1D91 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9642E1F71D38831C002E1D91 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9642E1F81D38831C002E1D91 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9642E2061D38831C002E1D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9642E2071D38831C002E1D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9642E2091D38831C002E1D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38CEE689CA09EED8EA095E71 /* Pods-CANNavApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tri Vo (589E3664D9)";
+				INFOPLIST_FILE = CANNavApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acumenvn.CANNavApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "77b52ffb-32b7-4f1f-8da4-aecd05c370ac";
+				SWIFT_OBJC_BRIDGING_HEADER = "CANNavApp/Classes/CANNavApp-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		9642E20A1D38831C002E1D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8830A72AABDE20998FC63A4 /* Pods-CANNavApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tri Vo (589E3664D9)";
+				INFOPLIST_FILE = CANNavApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acumenvn.CANNavApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "77b52ffb-32b7-4f1f-8da4-aecd05c370ac";
+				SWIFT_OBJC_BRIDGING_HEADER = "CANNavApp/Classes/CANNavApp-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		9642E20C1D38831C002E1D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6542B1D1BBF9B43C6F9314DC /* Pods-CANNavAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CANNavAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acumenvn.CANNavAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CANNavApp.app/CANNavApp";
+			};
+			name = Debug;
+		};
+		9642E20D1D38831C002E1D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC0935D1DF6D29079E90521 /* Pods-CANNavAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CANNavAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acumenvn.CANNavAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CANNavApp.app/CANNavApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9642E1E61D38831C002E1D91 /* Build configuration list for PBXProject "CANNavApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9642E2061D38831C002E1D91 /* Debug */,
+				9642E2071D38831C002E1D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9642E2081D38831C002E1D91 /* Build configuration list for PBXNativeTarget "CANNavApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9642E2091D38831C002E1D91 /* Debug */,
+				9642E20A1D38831C002E1D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9642E20B1D38831C002E1D91 /* Build configuration list for PBXNativeTarget "CANNavAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9642E20C1D38831C002E1D91 /* Debug */,
+				9642E20D1D38831C002E1D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9642E1E31D38831C002E1D91 /* Project object */;
+}
