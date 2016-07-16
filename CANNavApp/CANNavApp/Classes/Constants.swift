@@ -17,6 +17,17 @@ class Constants: NSObject {
 
     enum Notification : String {
         case CanReachInternet  = "canReachInternet"
+        
+    }
+    
+    enum AlertTitle : String {
+        case NoLocationService = "location service is disabled"
+        case NoInternet = "network unavailable"
+    }
+    
+    enum AlertMessage : String {
+        case NoLocationService = "Please turn on Location Service in your device settings."
+        case NoInternet = "The internet connection appears to be offline. Please check your network and try again."
     }
     
     

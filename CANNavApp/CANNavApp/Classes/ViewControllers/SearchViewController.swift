@@ -20,6 +20,7 @@ protocol SearchViewControllerDelegate {
 class SearchViewController: UIViewController {
     
     var mSearchRequest : Alamofire.Request? = nil
+    var mLastTimeSendRequest : NSTimeInterval = 0
     
     @IBOutlet var mViewMap: UIView!
     @IBOutlet var mMapView: GMSMapView!
@@ -27,15 +28,19 @@ class SearchViewController: UIViewController {
     @IBOutlet var mTblViewMain: UITableView!
     @IBOutlet var mViewSearchAddress: UIView!
     @IBOutlet var mTxtSearch: UITextField!
+    @IBOutlet var mViewSearchModeText: UIView!
+    @IBOutlet var mViewSearchModeMap: UIView!
     
     var mMarker : GMSMarker? = nil
-    var mListAddress : NSMutableArray = NSMutableArray()
+    var mListAddress : Array<QueryLocationResultModel> = Array<QueryLocationResultModel>()
     var bSearchAddressMode : Bool = true
     var mDelegate : SearchViewControllerDelegate? = nil
     var mMyLocation : MyLocation?
     var mSearchForFromAddress : Bool = false
+    var bSearchModeMapActive : Bool = true
+    let mSelectedColor : UIColor = UIColor(red: 255/255, green: 214/255, blue: 92/255, alpha: 1)
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, delegate: SearchViewControllerDelegate?, locationInfo : MyLocation, searchForFromAddress : Bool) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, delegate: SearchViewControllerDelegate?, locationInfo : MyLocation?, searchForFromAddress : Bool) {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.mDelegate = delegate
@@ -51,7 +56,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        registerNibs()
+        registerNibs()
         
         // setup UI
         setupUI()
@@ -68,6 +73,12 @@ class SearchViewController: UIViewController {
      Setup UI
      */
     func setupUI() -> Void {
+        
+        mViewPick.layer.cornerRadius = 12.0
+        mViewPick.clipsToBounds = true
+        bSearchAddressMode = false
+        
+        refreshSearchModeBar()
         
         setupMapView()
         
@@ -96,17 +107,24 @@ class SearchViewController: UIViewController {
         mMapView.delegate = self
     }
     
+    /**
+     Setup marker
+     */
     func setupMarker() -> Void {
+        
         if mMarker == nil {
             mMarker = GMSMarker()
             mMarker?.map = mMapView
             mMarker?.icon = UIImage(named: "default_marker")
             mMarker?.title = ""
             mMarker?.zIndex = 1
-            mMarker?.position = (mMyLocation?.mLocationCoordinate)!
-            
-            // animate map move to user location
-            mMapView.camera = GMSCameraPosition.cameraWithTarget((mMyLocation?.mLocationCoordinate)!, zoom: 16)
+            if mMyLocation != nil {
+                mMarker?.position = (mMyLocation?.mLocationCoordinate)!
+                // animate map move to user location
+                mMapView.camera = GMSCameraPosition.cameraWithTarget((mMyLocation?.mLocationCoordinate)!, zoom: 16)
+            } else {
+                recenterMarkerInMapView()
+            }
         }
     }
     
@@ -117,17 +135,31 @@ class SearchViewController: UIViewController {
         mTblViewMain.registerCellNib(SearchTableViewCell.self)
     }
     
+    /**
+     Refresh search mode bar
+     */
+    func refreshSearchModeBar() -> Void {
+        mViewSearchModeMap.backgroundColor = UIColor.clearColor()
+        mViewSearchModeText.backgroundColor = UIColor.clearColor()
+        if bSearchModeMapActive == false {
+            mViewSearchModeText.backgroundColor = mSelectedColor
+        } else {
+            mViewSearchModeMap.backgroundColor = mSelectedColor
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func btnSet_Touched(sender: AnyObject) {
+        
+        let newLocation = MyLocation(location: mMarker!.position, name: mTxtSearch.text!)
         if self.mDelegate != nil {
-            self.mDelegate?.searchViewController(self, choseLocation: mMyLocation!, forFromAddress: mSearchForFromAddress)
+            self.mDelegate?.searchViewController(self, choseLocation: newLocation, forFromAddress: mSearchForFromAddress)
         }
         
         self.dismissViewControllerAnimated(true) { 
             
         }
-        
     }
     
     
@@ -140,18 +172,25 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func btnSearchMap_Touched(sender: AnyObject) {
+        bSearchModeMapActive = true
         mViewSearchAddress.hidden = true
         mViewMap.hidden = false
         self.view.sendSubviewToBack(mViewSearchAddress)
         self.view.bringSubviewToFront(mViewMap)
         self.view.endEditing(true)
+        refreshSearchModeBar()
     }
     
     @IBAction func btnSearchAddress_Touched(sender: AnyObject) {
+        bSearchModeMapActive = false
         mViewSearchAddress.hidden = false
         mViewMap.hidden = true
         self.view.sendSubviewToBack(mViewMap)
         self.view.bringSubviewToFront(mViewSearchAddress)
+        refreshSearchModeBar()
+        
+        // active keyboard
+        mTxtSearch.becomeFirstResponder()
     }
 }
 
@@ -161,6 +200,9 @@ extension SearchViewController : UITextFieldDelegate {
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         mViewSearchAddress.hidden = false
         mViewMap.hidden = true
+        bSearchModeMapActive = false
+        refreshSearchModeBar()
+        
         return true
     }
     
@@ -169,10 +211,40 @@ extension SearchViewController : UITextFieldDelegate {
         let range = range.stringRangeForText(textField.text!)
         let output = textField.text!.stringByReplacingCharactersInRange(range, withString: string)
         
-        
+        if output.length > 3 {
+            // send request
+            let currentTimeInMs = NSDate().timeIntervalSince1970
+            if (currentTimeInMs - mLastTimeSendRequest) > 2 {
+                // time gap between 2 requests must be greater than 2 seconds
+                if TUtilsSwift.appDelegate().bCanReachInternet == true {
+
+                    NetworkManager.sharedInstance.queryLatLongBasedOnAddress(output, completion: { (locationResults) in
+                        if self.mListAddress.count > 0 {
+                            self.mListAddress.removeAll()
+                        }
+                        
+                        self.mListAddress += locationResults
+                        
+                        // reload table data
+                        self.mTblViewMain.reloadData()
+                        }, fail: { (failError) in
+                            
+                    })
+                } else {
+                    self.navigationController?.presentViewController(self.showNoInternetConnectionMessage(), animated: true, completion: nil)
+                }
+                
+                
+            }
+        } else {
+            mListAddress.removeAll()
+            mTblViewMain.reloadData()
+        }
         
         return true
     }
+    
+    
     
     
 }
@@ -183,21 +255,53 @@ extension SearchViewController : GMSMapViewDelegate {
     func mapView(mapView: GMSMapView, willMove gesture: Bool) {
         mViewPick.hidden = true
         
+        self.recenterMarkerInMapView()
+        
         // resign text field
         self.view.endEditing(true)
     }
     
     func mapView(mapView: GMSMapView, idleAtCameraPosition position: GMSCameraPosition) {
         mViewPick.hidden = false
-    }
-    
-    func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
-        if mMarker != nil {
-            mMarker?.position = position.target
-            mMyLocation?.mLocationCoordinate = position.target
+        
+        if mSearchRequest != nil {
+            // cancel previous request
+            mSearchRequest?.cancel()
+        }
+        // request location
+        if TUtilsSwift.appDelegate().bCanReachInternet == true {
+            // request
+            NetworkManager.sharedInstance.queryAddressBasedOnLatLng(position.target.latitude, lngValue: position.target.longitude, completion: { (locationResult) in
+                self.mTxtSearch.text = locationResult?.formattedAddress
+                }, fail: { (failError) in
+                    
+            })
         }
     }
     
+    func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
+        self.recenterMarkerInMapView()
+    }
+
+    func recenterMarkerInMapView() -> Void {
+        // get the center of mapview
+        let center = mMapView.convertPoint(mMapView.center, fromView: mViewMap)
+        
+        // reset ther marker position so it moves without animation
+        mMapView.clear()
+        mMarker?.appearAnimation = kGMSMarkerAnimationNone
+        mMarker?.position = mMapView.projection.coordinateForPoint(center)
+        mMarker?.map = mMapView
+    }
+    
+}
+
+// MARK: - UIScrollView Delegate
+
+extension SearchViewController : UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
 }
 
 // MARK: - UITableView Delegate
@@ -209,7 +313,7 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return mListAddress.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -217,10 +321,28 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! SearchTableViewCell
+        
+        cell.selectionStyle = .Gray
+        
+        let location = self.mListAddress[indexPath.row]
+        cell.setAddress(location.formattedAddress!)
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.view.endEditing(true)
+        let location = self.mListAddress[indexPath.row]
         
+        if self.mDelegate != nil {
+            self.mDelegate?.searchViewController(self, choseLocation: MyLocation(location: CLLocationCoordinate2DMake(location.lat!, location.lng!), name: location.formattedAddress!), forFromAddress: self.mSearchForFromAddress)
+        }
+        
+        self.dismissViewControllerAnimated(true) { 
+            
+        }
     }
 }

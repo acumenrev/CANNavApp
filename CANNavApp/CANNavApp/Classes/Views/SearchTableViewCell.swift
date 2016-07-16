@@ -11,7 +11,8 @@ import UIKit
 class SearchTableViewCell: UITableViewCell {
     
     
-    @IBOutlet var mLblContent: UILabel!
+
+    @IBOutlet var mLblAddress: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,10 @@ class SearchTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setAddress(address : String) -> () {
+        mLblAddress.text = address
     }
     
 }

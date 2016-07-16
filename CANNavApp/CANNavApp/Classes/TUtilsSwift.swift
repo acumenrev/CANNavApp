@@ -110,4 +110,13 @@ class TUtilsSwift: NSObject {
             break
         }
     }
+    
+    /**
+     Get AppDelegate instance
+     
+     - returns: AppDelegate instance
+     */
+    static func appDelegate() -> AppDelegate {
+            return (UIApplication.sharedApplication().delegate as! AppDelegate)
+    }
 }

@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 import PureLayout
 
+
 extension UIViewController {
+    
+    
     private struct TVCExtensionProperties {
         static var mLblTitle:UILabel? = nil
         static var mViewTitle:UIView? = nil
@@ -68,7 +71,7 @@ extension UIViewController {
 
     }
     
-    func showAlert(title : String, message : String, delegate : AnyObject?, tag : Int, cancelButton: String, ok : String, okHandler:() -> Void?, cancelhandler:() -> Void?) -> Void {
+    func showAlert(title : String, message : String, delegate : AnyObject?, tag : Int, cancelButton: String, ok : String, okHandler:() -> (), cancelhandler:() -> ()) -> UIAlertController {
         let alertContronoller = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         if cancelButton.length > 0 {
@@ -86,5 +89,15 @@ extension UIViewController {
             
             alertContronoller.addAction(alertAction)
         }
+        
+        return alertContronoller
+    }
+    
+    func showNoInternetConnectionMessage() -> UIAlertController {
+        return  self.showAlert(Constants.AlertTitle.NoInternet.rawValue, message: Constants.AlertMessage.NoInternet.rawValue, delegate: nil, tag: 101, cancelButton: "", ok: "ok", okHandler: {
+            NSLog("")
+            }, cancelhandler: {
+                NSLog("")
+        })
     }
 }

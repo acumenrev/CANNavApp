@@ -13,6 +13,8 @@
                 <outlet property="mViewMap" destination="lbX-pd-wsV" id="qN5-L7-LNa"/>
                 <outlet property="mViewPick" destination="T5u-Ha-3kF" id="eoj-8j-Pnl"/>
                 <outlet property="mViewSearchAddress" destination="QAB-A3-PFo" id="yU1-ZO-YG3"/>
+                <outlet property="mViewSearchModeMap" destination="acd-SM-TbE" id="LJQ-Ef-7MF"/>
+                <outlet property="mViewSearchModeText" destination="KbD-wo-Z3T" id="3wS-8w-pcG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +26,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-1f-o30">
                     <rect key="frame" x="0.0" y="17" width="320" height="50"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKl-Vd-lmM">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NKl-Vd-lmM">
                             <rect key="frame" x="62" y="5" width="241" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -50,10 +52,10 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfG-jb-vE2">
-                            <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                            <rect key="frame" x="0.0" y="47" width="320" height="3"/>
                             <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1" id="4tp-Up-zqy"/>
+                                <constraint firstAttribute="height" constant="3" id="4tp-Up-zqy"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -120,6 +122,10 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VWG-s2-IQk">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="373"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="nmd-ND-OQV"/>
+                                <outlet property="delegate" destination="-1" id="Vv4-Wu-xSJ"/>
+                            </connections>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,7 +141,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-eA-qr6">
                             <rect key="frame" x="159" y="0.0" width="1" height="40"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="1" id="szf-4s-SHX"/>
                             </constraints>
@@ -195,7 +201,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="a2j-eA-qr6" firstAttribute="top" secondItem="L7H-HE-e9s" secondAttribute="top" id="Bci-Mb-4aK"/>
                         <constraint firstItem="a2j-eA-qr6" firstAttribute="leading" secondItem="KbD-wo-Z3T" secondAttribute="trailing" id="G8u-pX-RNz"/>

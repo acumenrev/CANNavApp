@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var reachability: Reachability?
+    var bCanReachInternet : Bool = false
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -105,8 +106,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let reachability = note.object as! Reachability
         
         if reachability.isReachable() {
+            bCanReachInternet = true
             NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notification.CanReachInternet.rawValue, object: true)
         } else {
+            bCanReachInternet = false
             NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notification.CanReachInternet.rawValue, object: false)
         }
     }

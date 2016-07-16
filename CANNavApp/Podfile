@@ -11,6 +11,7 @@ def installed_pods
     pod 'SCLAlertView'
     pod 'GoogleMaps', '~> 1.13'
     pod 'CocoaLumberjack/Swift'
+    pod "PKHUD"
 end
 
 
