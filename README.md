@@ -5,9 +5,7 @@
 
 ●  Convert map’s current longitude and latitude into address. 
 
-●  When user move the map, address must be updated according to new longitude and 
-
-latitude. 
+●  When user move the map, address must be updated according to new longitude and latitude. 
 
 ●  Allow user to search a specific location by address (auto-complete included) 
 
