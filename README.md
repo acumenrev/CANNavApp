@@ -14,7 +14,7 @@ latitude.
 ●  When user choose another destination on the map (or search by address), the app will help connect the current location to target location. Map will show the path to travel between two location and estimated travel time. 
 
 #Demo Video
-[![Demo](http://img.youtube.com/vi/VD_eTUfkuGw/0.jpg)](http://www.youtube.com/watch?v=T-D1KVIuvjA)
+[![Demo](http://img.youtube.com/vi/VD_eTUfkuGw/0.jpg)](http://www.youtube.com/watch?v=VD_eTUfkuGw)
 
 
 #How To Build
