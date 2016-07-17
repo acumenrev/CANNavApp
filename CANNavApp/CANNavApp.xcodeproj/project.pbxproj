@@ -478,7 +478,6 @@
 				TargetAttributes = {
 					9642E1EA1D38831C002E1D91 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = PP3D7A2MP5;
 					};
 					9642E1FE1D38831C002E1D91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -852,12 +851,12 @@
 			baseConfigurationReference = 38CEE689CA09EED8EA095E71 /* Pods-CANNavApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tri Vo (589E3664D9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CANNavApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acumenvn.CANNavApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77b52ffb-32b7-4f1f-8da4-aecd05c370ac";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CANNavApp/Classes/CANNavApp-Bridging-Header.h";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6";
 			};
@@ -868,12 +867,12 @@
 			baseConfigurationReference = E8830A72AABDE20998FC63A4 /* Pods-CANNavApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tri Vo (589E3664D9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CANNavApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acumenvn.CANNavApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77b52ffb-32b7-4f1f-8da4-aecd05c370ac";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CANNavApp/Classes/CANNavApp-Bridging-Header.h";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6";
 			};
