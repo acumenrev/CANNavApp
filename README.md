@@ -24,4 +24,4 @@ latitude.
 ● After Cocoapods installed, use terminal to navigate CANNavApp folder which contains Podfile and type below command into terminal
 > $ pod install 
 
-● After cloning repos process completed, use Xcode to open CANNavApp.xcworkspace and build
+● After cloning dependencies process completed, use Xcode to open CANNavApp.xcworkspace and build
