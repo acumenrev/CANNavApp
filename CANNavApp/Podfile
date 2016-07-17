@@ -25,6 +25,7 @@ target 'CANNavApp' do
   target 'CANNavAppTests' do
     inherit! :search_paths
     # Pods for testing
+    installed_pods
     pod 'Nimble'
   end
 

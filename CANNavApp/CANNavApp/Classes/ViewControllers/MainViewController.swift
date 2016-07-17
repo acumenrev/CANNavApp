@@ -23,7 +23,6 @@ class MainViewController: UIViewController, SearchViewControllerDelegate {
     let kTAG_TXT_FROM = 101
     let kTAG_TXT_TO = 102
     let kTAG_BTN_MOVING_MODE_CAR = 101
-    let kTAG_BTN_MOVING_MODE_BICYCLE = 102
     let kTAG_BTN_MOVING_MODE_WALKING = 104
     
     var mLocationManager : CLLocationManager?
@@ -41,7 +40,6 @@ class MainViewController: UIViewController, SearchViewControllerDelegate {
     var mDirectionDictionary : NSMutableDictionary = NSMutableDictionary()
     var mCurrentPolyline : GMSPolyline?
     let mSelectedColor : UIColor = UIColor(red: 255/255, green: 214/255, blue: 92/255, alpha: 1)
-    @IBOutlet var mViewVehicleBottomConstraint: NSLayoutConstraint!
     
     // MARK: - IBOutlets
     @IBOutlet var mMapView: GMSMapView!
@@ -55,6 +53,8 @@ class MainViewController: UIViewController, SearchViewControllerDelegate {
     @IBOutlet var mLblDistance: UILabel!
     @IBOutlet var mLblDuration: UILabel!
     @IBOutlet var mViewDistanceAndDuration: UIView!
+    @IBOutlet var mViewVehicleBottomConstraint: NSLayoutConstraint!
+    
     
     
     override func viewDidLoad() {
@@ -87,6 +87,9 @@ class MainViewController: UIViewController, SearchViewControllerDelegate {
         mViewCurrentLocation.layer.cornerRadius = 16.0;
         mViewCurrentLocation.clipsToBounds = true;
         
+        mViewDistanceAndDuration.layer.cornerRadius = 8.0
+        mViewDistanceAndDuration.clipsToBounds = true
+        
         mTxtTo.tag = kTAG_TXT_TO
         mTxtFrom.tag = kTAG_TXT_FROM
         
@@ -97,6 +100,7 @@ class MainViewController: UIViewController, SearchViewControllerDelegate {
         
         // set constraint for vehicle view
         mViewVehicleBottomConstraint.constant = -50
+        
     }
     
     /**
@@ -244,6 +248,8 @@ class MainViewController: UIViewController, SearchViewControllerDelegate {
         if (mCurrentUserLocation != nil) {
             let camera = GMSCameraPosition.cameraWithLatitude((mCurrentUserLocation?.coordinate.latitude)!, longitude: (mCurrentUserLocation?.coordinate.longitude)!, zoom: mMapView.camera.zoom)
             mMapView.animateToCameraPosition(camera)
+        } else {
+            self.showMessageForLocationServicesPermission()
         }
     }
     
@@ -349,7 +355,7 @@ extension MainViewController : CLLocationManagerDelegate {
         mCurrentUserLocation = location
         
         if mCurrentUserLocation != nil && bDidGetUserLocationFirstTime == false {
-            mViewCurrentLocation.hidden = false
+           
             bDidGetUserLocationFirstTime = true
             // current location marker
             mMarkerUserLocation = GMSMarker()
@@ -399,14 +405,14 @@ extension MainViewController : CLLocationManagerDelegate {
             mLocationManager?.startUpdatingLocation()
             break
         case .Denied:
-            mViewCurrentLocation.hidden = true
+            
             self.showMessageForLocationServicesPermission()
             break
         case .NotDetermined:
             self.setupLocationManager()
             break
         case .Restricted:
-            mViewCurrentLocation.hidden = true
+    
             self.showMessageForLocationServicesPermission()
             break
         default:

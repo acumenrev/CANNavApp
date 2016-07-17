@@ -145,6 +145,17 @@ class NetworkManager: NSObject {
         }
     }
 
+    /**
+     Get Direction path
+     
+     - parameter origin:      Origin point
+     - parameter destination: Destination point
+     - parameter movingMode:  MovingMode
+     - parameter completion:  Completion block
+     - parameter fail:        Fail block
+     
+     - returns: Alamofire.Request instance
+     */
     func getDirectionPath(origin : CLLocationCoordinate2D,
                           destination : CLLocationCoordinate2D,
                           movingMode : String,

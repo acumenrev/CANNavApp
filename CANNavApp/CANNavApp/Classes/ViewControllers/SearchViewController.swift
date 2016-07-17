@@ -33,7 +33,6 @@ class SearchViewController: UIViewController {
     
     var mMarker : GMSMarker? = nil
     var mListAddress : Array<QueryLocationResultModel> = Array<QueryLocationResultModel>()
-    var bSearchAddressMode : Bool = true
     var mDelegate : SearchViewControllerDelegate? = nil
     var mMyLocation : MyLocation?
     var mSearchForFromAddress : Bool = false
@@ -76,7 +75,6 @@ class SearchViewController: UIViewController {
         
         mViewPick.layer.cornerRadius = 12.0
         mViewPick.clipsToBounds = true
-        bSearchAddressMode = false
         
         refreshSearchModeBar()
         
